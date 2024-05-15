@@ -1,11 +1,22 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Recipe } from '../../recipe.model';
 
 @Component({
   selector: 'app-recipe-item',
-  standalone: true,
-  imports: [NgFor], // Assuming Recipe here is a component, directive, or pipe, which seems incorrect in this context
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.css'],
 })
-export class RecipeItemComponent {}
+export class RecipeItemComponent implements OnInit {
+  @Input() recipe!: Recipe;
+
+  constructor() {}
+
+  ngOnInit(): void {}
+}
+
+@NgModule({
+  declarations: [RecipeItemComponent],
+  imports: [CommonModule],
+})
+export class RecipeItemModule {}
