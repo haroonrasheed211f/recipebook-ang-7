@@ -20,7 +20,6 @@ export class RecipeListComponent {
     ),
   ];
   recipe: any;
-  recipeEl!: Recipe;
 
   constructor() {
     // Initialization logic
