@@ -1,14 +1,12 @@
-import { NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Recipe } from '../../recipe.model';
 
 @Component({
   selector: 'app-recipe-item',
   standalone: true,
-  imports: [NgFor], // Assuming Recipe here is a component, directive, or pipe, which seems incorrect in this context
   templateUrl: './recipe-item.component.html',
   styleUrls: ['./recipe-item.component.css'],
 })
 export class RecipeItemComponent {
-  recipes: any;
-  recipe: any;
+  @Input() recipe: Recipe = { name: '', description: '', imagePath: '' }; // Initialize with default values
 }
